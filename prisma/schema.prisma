@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String                 @id @default(cuid())
+  email                 String                 @unique
+  name                  String
+  username              String                 @unique
+  timezone              String                 @default("America/New_York")
+  avatarUrl             String?
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  eventTypes            EventType[]
+  availabilitySchedules AvailabilitySchedule[]
+}
+
+model EventType {
+  id                  String    @id @default(cuid())
+  userId              String
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title               String
+  slug                String
+  description         String?
+  durationMinutes     Int       @default(30)
+  color               String    @default("#071a31")
+  bufferBeforeMinutes Int       @default(0)
+  bufferAfterMinutes  Int       @default(0)
+  isActive            Boolean   @default(true)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  bookings            Booking[]
+
+  @@unique([userId, slug])
+}
+
+model AvailabilitySchedule {
+  id        String             @id @default(cuid())
+  userId    String
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String             @default("Working Hours")
+  timezone  String             @default("America/New_York")
+  isDefault Boolean            @default(true)
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+  rules     AvailabilityRule[]
+}
+
+model AvailabilityRule {
+  id         String               @id @default(cuid())
+  scheduleId String
+  schedule   AvailabilitySchedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  dayOfWeek  Int // 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 0 = Sunday
+  startTime  String // "09:00"
+  endTime    String // "17:00"
+  createdAt  DateTime             @default(now())
+  updatedAt  DateTime             @updatedAt
+
+  @@index([scheduleId, dayOfWeek])
+}
+
+model Booking {
+  id              String    @id @default(cuid())
+  eventTypeId     String
+  eventType       EventType @relation(fields: [eventTypeId], references: [id], onDelete: Cascade)
+  startTime       DateTime
+  endTime         DateTime
+  inviteeName     String
+  inviteeEmail    String
+  inviteeNotes    String?
+  inviteeTimezone String
+  status          String    @default("confirmed") // "confirmed" | "cancelled"
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([eventTypeId, startTime])
+  @@index([status])
+}

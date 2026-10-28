@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json.schemastore.org/design-tokens.json",
+  "meta": {
+    "system_name": "Calendly Web Design System & Tokens",
+    "version": "2026.3 (Live Chrome Measured & Reconciled)",
+    "target_domain": "https://calendly.com",
+    "verification_date": "2026-10-13",
+    "verification_method": "Live Chrome Execution (CDP) + Production CSS bundle analysis (_astro/layouts.*.css, _astro/src.*.css, widget.css) + live DOM inspection",
+    "browser_engine": "Google Chrome 154 (Chrome/154.0.8037.98)",
+    "classification_legend": {
+      "measured_browser": "Directly confirmed from computed DOM styles (window.getComputedStyle()) in live Chrome",
+      "measured_css": "Directly confirmed from production CSS rules, @font-face declarations, or CSS custom properties",
+      "observed": "Directly confirmed from live production HTML structure, DOM attributes, or component props",
+      "estimated": "Inferred from structural and component patterns where exact numeric token is context-dependent",
+      "blocked": "Insufficient direct evidence to confirm without authenticated session or lead form submission"
+    },
+    "inspected_urls": [
+      "https://calendly.com/",
+      "https://calendly.com/pricing",
+      "https://calendly.com/sales",
+      "https://calendly.com/signup",
+      "https://calendly.com/scheduling",
+      "https://calendly.com/demo",
+      "https://assets.calendly.com/assets/external/widget.css"
+    ]
+  },
+  "typography": {
+    "font_families": {
+      "brand_primary": {
+        "value": "\"Calendly Sans\", var(--font-system)",
+        "fallback": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "type": "variable",
+        "file_source": "/_astro/calendly-sans-variable.D6oRyvrG.woff2",
+        "format": "woff2",
+        "weights": "100 900",
+        "style": "oblique 0deg 10deg",
+        "status": "measured_css"
+      },
+      "sans_interface": {
+        "value": "\"Geist\", var(--font-system)",
+        "fallback": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "type": "variable",
+        "file_source": "/_astro/geist-latin.BfrrXRGr.woff2",
+        "format": "woff2",
+        "weights": "100 900",
+        "status": "measured_css"
+      },
+      "serif_editorial": {
+        "value": "\"Wulkan Text\", var(--font-system)",
+        "fallback": "system-ui, -apple-system, \"Segoe UI\", Roboto, Georgia, serif",
+        "type": "static_family",
+        "file_source": "/_astro/wulkan-text-regular.Bg2PuYJH.woff2",
+        "weights": [400, 500, 600],
+        "styles": ["normal", "italic"],
+        "status": "measured_css"
+      },
+      "code_mono": {
+        "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "status": "measured_css"
+      }
+    },
+    "font_weights": {
+      "regular": { "value": 400, "token": "--font-weight-regular", "status": "measured_css" },
+      "medium": { "value": 500, "token": "--font-weight-medium", "status": "measured_css" },
+      "semibold": { "value": 600, "token": "--font-weight-semibold", "status": "measured_css" },
+      "bold": { "value": 700, "token": "--font-weight-bold", "status": "measured_css" }
+    },
+    "type_classes": {
+      "type-huge": { "font_size": "40px", "line_height": "1.1", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" },
+      "type-h1": { "font_size": "36px", "line_height": "1.1", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" },
+      "type-h2": { "font_size": "28px", "fixed": "48px", "line_height": "1.1", "letter_spacing": "0px", "fixed_letter_spacing": "-2px", "font_weight": 500, "status": "measured_css" },
+      "type-h3": { "font_size": "24px", "fixed": "36px", "line_height": "1.1", "letter_spacing": "0px", "fixed_letter_spacing": "-1px", "font_weight": 500, "status": "measured_css" },
+      "type-h4": { "font_size": "22px", "fixed": "28px", "line_height": "1.2", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" },
+      "type-h5": { "font_size": "20px", "fixed": "24px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" },
+      "type-h6": { "font_size": "18px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" },
+      "type-body-xl": { "font_size": "18px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 400, "status": "measured_css" },
+      "type-body-lg": { "font_size": "16px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 400, "status": "measured_css" },
+      "type-body-md": { "font_size": "14px", "fixed": "16px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 400, "status": "measured_css" },
+      "type-body-sm": { "font_size": "12px", "fixed": "14px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 400, "status": "measured_css" },
+      "type-body-xs": { "font_size": "10px", "fixed": "12px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 400, "status": "measured_css" },
+      "type-overline": { "font_size": "12px", "fixed": "12px", "line_height": "1.0", "letter_spacing": "0px", "fixed_letter_spacing": "1px", "font_weight": 500, "text_transform": "uppercase", "status": "measured_css" },
+      "type-caption": { "font_size": "12px", "line_height": "1.4", "letter_spacing": "0px", "font_weight": 500, "status": "measured_css" }
+    },
+    "tracking": {
+      "tracking-ui-tighter": { "fluid": "0px", "fixed": "-2px", "status": "measured_css" },
+      "tracking-ui-tight": { "fluid": "0px", "fixed": "-1px", "status": "measured_css" },
+      "tracking-ui-none": { "fluid": "0px", "fixed": "0px", "status": "measured_css" },
+      "tracking-ui-loose": { "fluid": "0px", "fixed": "1px", "status": "measured_css" }
+    }
+  },
+  "colors": {
+    "brand_core": {
+      "midnight": { "hex": "#071a31", "rgb": "rgb(7, 26, 49)", "role": "Primary brand dark: text, primary buttons, hero contrast backgrounds", "status": "measured_browser" },
+      "navy": { "hex": "#0e396a", "role": "Deep navy: primary button hover background", "status": "measured_css" },
+      "cobalt": { "hex": "#1e5ea7", "role": "Interactive blue: primary button pressed background, hyperlink color", "status": "measured_css" },
+      "cornflower": { "hex": "#6bb1ff", "role": "Focus ring outline, light brand accent", "status": "measured_css" },
+      "lake": { "hex": "#4890e3", "role": "Mid blue supporting accent", "status": "measured_css" },
+      "sky": { "hex": "#c1defe", "role": "Soft blue surface fill, dark mode button hover text", "status": "measured_css" },
+      "cloud": { "hex": "#f4f9ff", "role": "Pale cloud blue background tint", "status": "measured_css" },
+      "rain": { "hex": "#edf5ff", "role": "Light rain blue section tint", "status": "measured_css" }
+    },
+    "neutrals": {
+      "white": { "hex": "#ffffff", "rgb": "rgb(255, 255, 255)", "role": "Pure white surface/card fill, dropdown background", "status": "measured_browser" },
+      "magnolia": { "hex": "#fcfbf8", "rgb": "rgb(252, 251, 248)", "role": "Warm off-white primary canvas background (--color-surface-bg-primary), primary button text", "status": "measured_browser" },
+      "linen": { "hex": "#f5f3ee", "role": "Secondary warm sand canvas background (--color-surface-bg-secondary)", "status": "measured_css" },
+      "smoke": { "hex": "#f5f5f7", "role": "Cool off-white neutral", "status": "measured_css" },
+      "ash": { "hex": "#e4e6e9", "role": "Divider border gray, disabled button background", "status": "measured_css" },
+      "silver": { "hex": "#d8dce0", "role": "Subtle border gray, disabled action background", "status": "measured_css" },
+      "steel": { "hex": "#5f6d77", "rgb": "rgb(95, 109, 119)", "role": "Muted body text, icons, box-shadow color stop tint", "status": "measured_browser" },
+      "onyx": { "hex": "#0b0d0f", "role": "Near-black neutral text", "status": "measured_css" },
+      "black": { "hex": "#000000", "role": "True black", "status": "measured_css" }
+    },
+    "ramp_neutrals": {
+      "ramp_neutral_200": { "hex": "#c6ccd2", "rgb": "rgb(198, 204, 210)", "role": "Default input border, card border", "status": "measured_browser" },
+      "ramp_neutral_300": { "hex": "#a4aeb7", "role": "Disabled action border (light)", "status": "measured_css" },
+      "ramp_neutral_350": { "hex": "#93a0aa", "role": "Tertiary text", "status": "measured_css" },
+      "ramp_neutral_450": { "hex": "#748491", "role": "Disabled action text", "status": "measured_css" },
+      "ramp_neutral_650": { "hex": "#49535c", "role": "Disabled action border (dark)", "status": "measured_css" },
+      "ramp_neutral_700": { "hex": "#3d464e", "role": "Neutral badge text", "status": "measured_css" },
+      "ramp_neutral_750": { "hex": "#323a41", "role": "Disabled action background (dark)", "status": "measured_css" }
+    },
+    "accents": {
+      "honeydew": { "hex": "#f2f8de", "role": "Light lime tinted section background", "status": "measured_css" },
+      "new_leaf": { "hex": "#f6faea", "role": "Ultra-pale lime background", "status": "measured_css" },
+      "lime": { "hex": "#dbee9f", "role": "Vibrant lime badge background", "status": "measured_css" },
+      "olive": { "hex": "#556425", "role": "Dark olive text on lime", "status": "measured_css" },
+      "avocado": { "hex": "#343c17", "role": "Deep olive text", "status": "measured_css" },
+      "sunbeam": { "hex": "#fcf1de", "role": "Warm amber tint", "status": "measured_css" },
+      "peach": { "hex": "#ffd39d", "role": "Peach accent", "status": "measured_css" },
+      "tangerine": { "hex": "#f8961f", "role": "Orange brand accent", "status": "measured_css" },
+      "seafoam": { "hex": "#baf0ec", "role": "Teal accent light", "status": "measured_css" },
+      "jade": { "hex": "#5ddfd7", "role": "Teal accent mid", "status": "measured_css" },
+      "lavender": { "hex": "#eae3fa", "role": "Lavender tint", "status": "measured_css" },
+      "iris": { "hex": "#d4c2ff", "role": "Iris purple accent", "status": "measured_css" },
+      "plum": { "hex": "#4d3589", "role": "Deep purple accent", "status": "measured_css" }
+    },
+    "functional_status": {
+      "success_bg": { "hex": "#dbee9f", "token": "--color-lime", "status": "measured_css" },
+      "success_bg_hover": { "hex": "#cee67e", "token": "--color-ramp-green-150", "status": "measured_css" },
+      "success_text": { "hex": "#3f491b", "token": "--color-ramp-green-700", "status": "measured_css" },
+      "warning_bg": { "hex": "#ffe67c", "token": "--color-ramp-yellow-100", "status": "measured_css" },
+      "warning_bg_hover": { "hex": "#ffd843", "token": "--color-ramp-yellow-150", "status": "measured_css" },
+      "warning_text": { "hex": "#473700", "token": "--color-ramp-yellow-750", "status": "measured_css" },
+      "error_bg": { "hex": "#fedfda", "token": "--color-ramp-red-100", "status": "measured_css" },
+      "error_bg_hover": { "hex": "#fcd1ca", "token": "--color-ramp-red-150", "status": "measured_css" },
+      "error_status": { "hex": "#b32812", "token": "--color-ramp-red-500", "status": "measured_css" },
+      "error_text": { "hex": "#841f0e", "token": "--color-ramp-red-700", "status": "measured_css" }
+    },
+    "button_action_states": {
+      "primary": {
+        "base_bg": { "hex": "#071a31", "rgb": "rgb(7, 26, 49)", "token": "--color-action-primary-bg", "status": "measured_browser" },
+        "base_text": { "hex": "#fcfbf8", "rgb": "rgb(252, 251, 248)", "token": "--color-action-primary-text", "status": "measured_browser" },
+        "hover_bg": { "hex": "#0e396a", "token": "--color-navy", "status": "measured_css" },
+        "pressed_bg": { "hex": "#1e5ea7", "token": "--color-cobalt", "status": "measured_css" },
+        "disabled_bg": { "hex": "#d8dce0", "token": "--color-silver", "status": "measured_css" },
+        "disabled_text": { "hex": "#748491", "token": "--color-ramp-neutral-450", "status": "measured_css" }
+      },
+      "secondary": {
+        "base_border": { "hex": "#071a31", "rgb": "rgb(7, 26, 49)", "width": "1px", "status": "measured_browser" },
+        "base_text": { "hex": "#071a31", "rgb": "rgb(7, 26, 49)", "status": "measured_browser" },
+        "hover_bg": { "hex": "#071a31", "status": "measured_css" },
+        "hover_text": { "hex": "#fcfbf8", "status": "measured_css" },
+        "hover_border": { "hex": "#071a31", "status": "measured_css" },
+        "pressed_bg": { "hex": "#0e396a", "token": "--color-navy", "status": "measured_css" },
+        "pressed_border": { "hex": "#0e396a", "token": "--color-navy", "status": "measured_css" },
+        "disabled_border": { "hex": "#a4aeb7", "token": "--color-ramp-neutral-300", "status": "measured_css" },
+        "disabled_text": { "hex": "#748491", "token": "--color-ramp-neutral-450", "status": "measured_css" }
+      },
+      "tertiary_ghost": {
+        "base_text": { "hex": "#071a31", "rgb": "rgb(7, 26, 49)", "status": "measured_browser" },
+        "hover_text": { "hex": "#5f6d77", "token": "--color-steel", "status": "measured_css" },
+        "pressed_text": { "hex": "#1e5ea7", "token": "--color-cobalt", "status": "measured_css" }
+      },
+      "focus_ring": {
+        "border_color": { "hex": "#6bb1ff", "token": "--color-action-focus-border", "status": "measured_css" },
+        "ring_color": { "rgba": "rgba(107, 177, 255, 0.3)", "token": "--color-cornflower-a30", "status": "measured_css" }
+      }
+    },
+    "alpha_variants": {
+      "midnight_a05": { "rgba": "rgba(7, 26, 49, 0.05)", "hex_alpha": "#071a310d", "status": "measured_css" },
+      "midnight_a10": { "rgba": "rgba(7, 26, 49, 0.10)", "hex_alpha": "#071a311a", "status": "measured_css" },
+      "midnight_a20": { "rgba": "rgba(7, 26, 49, 0.20)", "hex_alpha": "#071a3133", "status": "measured_css" },
+      "midnight_a50": { "rgba": "rgba(7, 26, 49, 0.50)", "hex_alpha": "#071a3180", "status": "measured_css" },
+      "midnight_a60": { "rgba": "rgba(7, 26, 49, 0.60)", "hex_alpha": "#071a3199", "status": "measured_css" },
+      "cornflower_a30": { "rgba": "rgba(107, 177, 255, 0.30)", "hex_alpha": "#6bb1ff4d", "status": "measured_css" }
+    }
+  },
+  "layout_and_spacing": {
+    "base_grid": { "value": "0.25rem (4px)", "token": "--spacing", "status": "measured_css" },
+    "max_widths": {
+      "layout_max": { "value": "1920px", "token": "--layout-max-width", "status": "measured_css" },
+      "section_max": { "value": "1440px", "formula": "calc(var(--breakpoint-ui-dsk) + 2*80px)", "status": "measured_css" },
+      "container_desktop": { "value": "1280px", "token": "--breakpoint-ui-dsk", "status": "measured_css" },
+      "heading_max": { "value": "640px", "token": "--max-width-heading", "status": "measured_css" },
+      "subhead_max": { "value": "560px", "token": "--max-width-subhead", "status": "measured_css" },
+      "scroll_card": { "value": "384px", "token": "--width-scroll-card", "status": "measured_css" },
+      "header_panel_product": { "value": "576px", "token": "--header-panel-width-product", "status": "measured_css" },
+      "header_panel_default": { "value": "924px", "token": "--header-panel-width-default", "status": "measured_css" },
+      "header_panel_resources": { "value": "1005px", "token": "--header-panel-width-resources", "status": "measured_css" }
+    },
+    "spacing_scale": {
+      "xxs": { "value": "4px", "token": "--spacing-xxs", "status": "measured_css" },
+      "xs": { "value": "8px", "token": "--spacing-xs-fixed", "status": "measured_css" },
+      "sm": { "value": "12px", "token": "--spacing-sm-fixed", "status": "measured_css" },
+      "md": { "value": "16px", "token": "--spacing-md-fixed", "status": "measured_css" },
+      "lg": { "value": "24px", "token": "--spacing-lg-fixed", "status": "measured_css" },
+      "xl": { "value": "32px", "token": "--spacing-xl-fixed", "status": "measured_css" },
+      "2xl": { "value": "40px", "token": "--spacing-2xl-fixed", "status": "measured_css" },
+      "3xl": { "value": "48px", "token": "--spacing-3xl-fixed", "status": "measured_css" },
+      "section_y": { "value": "96px", "token": "--spacing-ui-section-y", "status": "measured_css" },
+      "section_default": { "value": "48px", "token": "--spacing-section-default", "status": "measured_css" },
+      "page_padding_x": { "value": "24px", "token": "--spacing-page-padding-horizontal", "status": "measured_css" }
+    },
+    "radii": {
+      "btn_computed_live": { "value": "16px", "status": "measured_browser" },
+      "btn_standard": { "value": "10px", "token": "--radius-btn-standard", "status": "measured_css" },
+      "btn_small": { "value": "8px", "token": "--radius-btn-small", "status": "measured_css" },
+      "dropdown_computed_live": { "value": "32px", "status": "measured_browser" },
+      "input_computed_live": { "value": "16px", "status": "measured_browser" },
+      "ui_xxs": { "value": "4px", "token": "--radius-ui-xxs", "status": "measured_css" },
+      "ui_xs": { "value": "4px", "fixed": "8px", "status": "measured_css" },
+      "ui_sm": { "value": "8px", "fixed": "12px", "status": "measured_css" },
+      "ui_md": { "value": "12px", "fixed": "16px", "status": "measured_css" },
+      "ui_lg": { "value": "16px", "fixed": "20px", "status": "measured_css" },
+      "ui_xl": { "value": "20px", "fixed": "24px", "status": "measured_css" },
+      "ui_2xl": { "value": "24px", "fixed": "32px", "status": "measured_css" },
+      "ui_3xl": { "value": "32px", "fixed": "40px", "status": "measured_css" },
+      "ui_4xl": { "value": "40px", "fixed": "48px", "status": "measured_css" },
+      "pill_full": { "value": "9999px", "token": "--radius-ui-full", "status": "measured_css" }
+    },
+    "shadows": {
+      "ui_sm": { "value": "0 4px 5px #5f6d770a, 0 6px 10px #5f6d770d", "status": "measured_css" },
+      "ui_md": { "value": "0 4px 5px #5f6d770a, 0 4px 10px #5f6d7708, 0 10px 20px #5f6d770d", "status": "measured_css" },
+      "ui_lg": { "value": "0 4px 5px #5f6d770a, 0 8px 15px #5f6d7708, 0 15px 30px #5f6d770f", "status": "measured_css" },
+      "ui_xl": { "value": "0 4px 5px #5f6d770a, 0 8px 15px #5f6d7708, 0 30px 50px #5f6d7714", "status": "measured_css" },
+      "ui_2xl": { "value": "0 4px 5px #5f6d770a, 0 10px 15px #5f6d770a, 0 40px 50px #5f6d771a", "status": "measured_css" },
+      "ui_dark_md": { "value": "0 4px 5px #0b0d0f33, 0 4px 10px #0b0d0f33, 0 10px 20px #0b0d0f33", "status": "measured_css" }
+    }
+  },
+  "breakpoints": {
+    "mobile_max": { "value": "767px", "status": "measured_css" },
+    "tablet_min": { "value": "769px", "token": "--breakpoint-ltb", "status": "measured_css" },
+    "desktop_small_min": { "value": "1024px", "token": "--breakpoint-ui-sdsk", "status": "measured_css" },
+    "desktop_nav_collapse_live": { "value": "1024px", "status": "measured_browser" },
+    "desktop_large_min": { "value": "1280px", "token": "--breakpoint-ui-dsk", "status": "measured_css" },
+    "widget_mobile_dock": { "value": "975px", "status": "measured_css" }
+  },
+  "motion": {
+    "transitions": {
+      "quick": { "value": "150ms ease", "usage": "Buttons, form inputs, links", "status": "measured_css" },
+      "medium": { "value": "300ms ease-out", "usage": "Scroll banners, drawer slide", "status": "measured_css" },
+      "dialog_in": { "value": "250ms cubic-bezier(0.16, 1, 0.3, 1)", "usage": "Modal dialog entry", "status": "measured_css" }
+    },
+    "keyframes": {
+      "inline_dropdown_in": { "from": "opacity: 0; translate: 0 -6px", "to": "opacity: 1; translate: 0 0", "status": "measured_css" },
+      "modal_dialog_in": { "from": "opacity: 0; translate: -50% -10px; scale: 0.97", "to": "opacity: 1; translate: -50% -50%; scale: 1", "status": "measured_css" },
+      "modal_overlay_in": { "from": "opacity: 0", "to": "opacity: 1", "status": "measured_css" },
+      "trust_bar_scroll": { "type": "infinite marquee translateX", "status": "measured_css" },
+      "loading_skeleton_wave": { "type": "shimmer background-position 200% 0", "status": "measured_css" }
+    }
+  }
+}

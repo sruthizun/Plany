@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Core Tokens */
+  --color-brand-midnight: #071a31;
+  --color-brand-navy: #0e396a;
+  --color-brand-cobalt: #1e5ea7;
+  --color-brand-cornflower: #6bb1ff;
+  --color-brand-lake: #4890e3;
+  --color-brand-sky: #c1defe;
+  --color-brand-cloud: #f4f9ff;
+  --color-brand-rain: #edf5ff;
+
+  /* Surfaces & Neutrals */
+  --color-surface-magnolia: #fcfbf8;
+  --color-surface-linen: #f5f3ee;
+  --color-surface-smoke: #f5f5f7;
+  --color-surface-white: #ffffff;
+  --color-surface-ash: #e4e6e9;
+  --color-surface-silver: #d8dce0;
+  --color-surface-steel: #5f6d77;
+  --color-surface-onyx: #0b0d0f;
+
+  /* Neutral Ramp */
+  --color-ramp-200: #c6ccd2;
+  --color-ramp-300: #a4aeb7;
+  --color-ramp-350: #93a0aa;
+  --color-ramp-450: #748491;
+  --color-ramp-650: #49535c;
+  --color-ramp-700: #3d464e;
+  --color-ramp-750: #323a41;
+
+  /* Functional Status */
+  --color-status-success-bg: #dbee9f;
+  --color-status-success-text: #3f491b;
+  --color-status-warning-bg: #ffe67c;
+  --color-status-warning-text: #473700;
+  --color-status-error-bg: #fedfda;
+  --color-status-error: #b32812;
+  --color-status-error-text: #841f0e;
+  --color-status-info-bg: #d5e8fe;
+  --color-status-info-text: #114580;
+
+  /* Standard Radii */
+  --radius-btn-sm: 8px;
+  --radius-btn-md: 10px;
+  --radius-ui-xs: 8px;
+  --radius-ui-sm: 12px;
+  --radius-ui-md: 16px;
+  --radius-ui-lg: 20px;
+  --radius-ui-xl: 24px;
+  --radius-ui-pill: 9999px;
+
+  /* Containers & Layout Max Widths */
+  --width-container: 1280px;
+  --width-section-max: 1440px;
+  --width-layout-max: 1920px;
+}
+
+:root {
+  /* Core Brand Tokens */
+  --color-midnight: #071a31;
+  --color-navy: #0e396a;
+  --color-cobalt: #1e5ea7;
+  --color-cornflower: #6bb1ff;
+  --color-lake: #4890e3;
+  --color-sky: #c1defe;
+  --color-cloud: #f4f9ff;
+  --color-rain: #edf5ff;
+
+  /* Canvas and Card Surfaces */
+  --color-surface-bg-primary: #fcfbf8;
+  --color-surface-bg-secondary: #f5f3ee;
+  --color-white: #ffffff;
+  --color-smoke: #f5f5f7;
+  --color-ash: #e4e6e9;
+  --color-silver: #d8dce0;
+  --color-steel: #5f6d77;
+  --color-onyx: #0b0d0f;
+
+  /* Ramp Neutrals */
+  --color-ramp-neutral-200: #c6ccd2;
+  --color-ramp-neutral-300: #a4aeb7;
+  --color-ramp-neutral-350: #93a0aa;
+  --color-ramp-neutral-450: #748491;
+  --color-ramp-neutral-650: #49535c;
+  --color-ramp-neutral-700: #3d464e;
+  --color-ramp-neutral-750: #323a41;
+
+  /* Action Focus */
+  --color-action-focus-border: #6bb1ff;
+  --color-action-focus-ring: rgba(107, 177, 255, 0.35);
+
+  /* Measured Calendly Box Shadows */
+  --shadow-ui-sm: 0 4px 5px rgba(95, 109, 119, 0.04), 0 6px 10px rgba(95, 109, 119, 0.05);
+  --shadow-ui-md: 0 4px 5px rgba(95, 109, 119, 0.04), 0 4px 10px rgba(95, 109, 119, 0.03), 0 10px 20px rgba(95, 109, 119, 0.05);
+  --shadow-ui-lg: 0 4px 5px rgba(95, 109, 119, 0.04), 0 8px 15px rgba(95, 109, 119, 0.03), 0 15px 30px rgba(95, 109, 119, 0.06);
+  --shadow-ui-xl: 0 4px 5px rgba(95, 109, 119, 0.04), 0 8px 15px rgba(95, 109, 119, 0.03), 0 30px 50px rgba(95, 109, 119, 0.08);
+  --shadow-ui-2xl: 0 4px 5px rgba(95, 109, 119, 0.04), 0 10px 15px rgba(95, 109, 119, 0.04), 0 40px 50px rgba(95, 109, 119, 0.1);
+
+  /* Header sizing */
+  --header-height-mobile: 64px;
+  --header-height-desktop: 72px;
+}
+
+body {
+  background-color: var(--color-surface-bg-primary);
+  color: var(--color-midnight);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================================
+   Typography Hierarchy & Classes (.type-*)
+   ========================================================================= */
+
+.type-huge {
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-huge {
+    font-size: 56px;
+    letter-spacing: -2px;
+  }
+}
+
+.type-h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+}
+
+.type-h2 {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-h2 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+}
+
+.type-h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-h3 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+}
+
+.type-h4 {
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-h4 {
+    font-size: 22px;
+  }
+}
+
+.type-h5 {
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .type-h5 {
+    font-size: 20px;
+  }
+}
+
+.type-h6 {
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+
+.type-body-xl {
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.type-body-lg {
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.type-body-md {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .type-body-md {
+    font-size: 15px;
+  }
+}
+
+.type-body-sm {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .type-body-sm {
+    font-size: 14px;
+  }
+}
+
+.type-body-xs {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .type-body-xs {
+    font-size: 12px;
+  }
+}
+
+.type-overline {
+  font-size: 12px;
+  line-height: 1.0;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.type-caption {
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* =========================================================================
+   Custom Keyframe Animations
+   ========================================================================= */
+
+@keyframes inline-dropdown-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-inline-dropdown {
+  animation: inline-dropdown-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modal-dialog-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes trust-bar-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-trust-scroll {
+  animation: trust-bar-scroll 35s linear infinite;
+}
+
+@keyframes feature-panel-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-feature-panel {
+  animation: feature-panel-in 350ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Custom Shadow Utility Classes */
+.shadow-cal-sm {
+  box-shadow: var(--shadow-ui-sm);
+}
+
+.shadow-cal-md {
+  box-shadow: var(--shadow-ui-md);
+}
+
+.shadow-cal-lg {
+  box-shadow: var(--shadow-ui-lg);
+}
+
+.shadow-cal-xl {
+  box-shadow: var(--shadow-ui-xl);
+}
+
+.shadow-cal-2xl {
+  box-shadow: var(--shadow-ui-2xl);
+}
